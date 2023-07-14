@@ -1,0 +1,16 @@
+{% extends 'base.html'%}
+{% block content %}
+<main>
+<div class="main-color-repuestos">
+    <h1> CONFIRMA QUE QUIERE BORRAR UN REPUESTO ¿? </h1>
+    <h2>{{repuestos.nombre}}</h2>
+    <form metohd="post">
+        {% csrf_token %}
+        <div>{{form.as_p}} </div>
+        <input type="submit" value={{ tipo }} />
+    </form>
+    <a href="{% url 'repuestos:all' %}"> CANCELAR </a>
+</div>
+</main>
+{%endblock%}    
+   

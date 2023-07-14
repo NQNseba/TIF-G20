@@ -1,0 +1,37 @@
+{% extends 'base.html'%}
+{% block content %}
+
+<div class="main-color-repuestos">
+    <h1>todos los repuestos</h1>
+    <h2><a href="{% url 'repuestos:create' %}">CREAR REPUESTO</a></h2>
+    {% for repuestos in respuestos_list %}
+    <div class="list">
+        <span>
+            <p>{{ forloop.counter }}</p>
+        </span>
+        <span>
+            <p>{{ repuestos.nombre }}</p>
+        </span>
+        <span>
+            <label for="">Detalle:</label>
+            <a href="{% url 'repuestos:detail' repuestos.id %}">+</a>
+        </span>      
+             
+        <span>
+            <label for="">Detalle:</label>
+            <a href="{% url 'repuestos:update' repuestos.id %}">+</a>
+        </span>    
+
+        <span>
+            <label for="">Detalle:</label>
+            <a href="{% url 'repuestos:delete' repuestos.id %}">+</a>
+        </span>    
+    </div>
+    
+    
+
+        {% endfor %}
+
+        </div>
+    
+    {% endblock%}

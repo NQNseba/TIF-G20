@@ -1,0 +1,15 @@
+{% extends 'base.html'%}
+{% block content %}
+<main>
+<div class="main-color-repuestos">
+    <h1> CREAR REPUESTOS</h1>
+    <form metohd="post">
+        {% csrf_token %}
+        <div>{{form.as_p}} </div>
+        <input type="submit" value={{ tipo }} />
+    </form>
+    <a href="{% url 'repuestos:all' %}"> Volvamos al inicio</a>
+</div>
+</main>
+{%endblock%}    
+   

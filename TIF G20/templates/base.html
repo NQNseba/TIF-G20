@@ -1,0 +1,87 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/00b19b2383.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>G20</title>
+    <style>
+      .contenedor {
+        background-image: url({% static './css/style.css'%});
+      }
+    </style>
+    <link rel="icon" type="image/png" href="{% static './imagenes/favicon.png'%}" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto"
+    />
+    <link rel="stylesheet" type="text/css" href="{% static './css/style.css'%}">
+    <link rel="stylesheet" href="{% static './css/main.css'%}">
+    <link rel="stylesheet" href="{% static './css/styles.css'%}">     
+  </head>
+
+  <body>
+    <main>
+    <!-- Seccion Inicio -->
+ 
+    <section id="inicio">
+      <div class="contenido">
+        <header>
+          
+          <div class="contenido-header">
+          
+            <nav id="nav" class="">
+              <ul id="links">
+                <li>
+
+                  <a href="#inicio"class="seleccionado"onclick="seleccionar(this)">INICIO</a >
+                
+                </li>
+
+                <li>
+                  <a href="#sobrenosotros" onclick="seleccionar(this)">SOBRE NOSOTROS</a>
+                </li>
+
+                <li>
+                  <a href="#productos" onclick="seleccionar(this)">PRODUCTOS</a>
+                </li>
+               
+                <li>
+                  <a href="#ubicacion" onclick="seleccionar(this)">UBICACION</a>
+                </li>
+
+                <li>
+                  <a href="#contacto" onclick="seleccionar(this)">CONTACTO</a>
+                </li>
+
+              </ul>
+
+            </nav>
+
+            <!-- Icono del menu responsive -->
+            <div id="icono-nav" onclick="responsiveMenu()">
+              <i class="fa-solid fa-bars"></i>
+            </div>
+
+            <div class="redes">
+              <a href="#"><i class="fa-brands fa-facebook"></i></a>
+              <a href="#"><i class="fa-brands fa-twitter"></i></a>
+              <a href="#"><i class="fa-brands fa-instagram-square"></i></a>
+            </div>
+          </div>
+
+          <a href="{% url 'repuestos:all'%}"> REPUESTOS </a>
+        </header>
+
+        {% block content %}
+        {% endblock %}
+
+    
+    <script src= "{% static './js/script.js'%}"></script>
+</body>

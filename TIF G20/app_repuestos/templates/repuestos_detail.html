@@ -1,0 +1,16 @@
+{% extends 'base.html'%}
+{% block content %}
+<main>
+<div class="main-color-repuestos">
+    <h1>{{repuesto.nombre}}</h1>
+    {%for label, value in repuestos.obtener_campos_valores %}
+    
+    <p>{{label | upper}} </p>
+    <p>{{ value}}</p>
+      
+    {% endfor %}
+
+    <a href="{% url 'repuestos:all' %}">BACK</a>
+</div>
+</main>
+{% endblock %}
